@@ -1,13 +1,115 @@
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  height: 100vh;
+  padding: 35px;
+  background-color: #202020;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins';
+}
+
+ul {
+  list-style-type: none;
+}
+
+h1 {
+  color: #fff;
+  text-align: center;
+  font-weight: 500;
+  margin-bottom: 35px;
+  font-size: 36px;
+}
+
+.todo-form {
+  display: flex;
+  justify-content: center;
+  height: 43px;
+}
+
+.todo-form :is(input, select) {
+  border: 0;
+  outline: 0;
+}
+
+.todo-form select {
+  margin-left: 30px;
+  padding: 0 15px;
+}
+
+.todo-form input[type="text"] {
+  width: clamp(170px, 40vw, 310px);
+  padding: 0 15px;
+  font-size: 16px;
+  text-transform: capitalize;
+}
+
+.todo-form input[type="text"]:focus {
+  background-color: #c7f7dd;
+}
+
+.todo-form input[type="text"]::selection {
+  color: #0aec70;
+  background-color: #353434;
+}
+
+.todo-form input[type="submit"] {
+  padding: 0 18px;
+  font-size: 25px;
+  background-color: #0aec70;
+  color: #fff;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.todo-form input[type="submit"]:hover {
+  background-color: #07cc5f;
+
+}
+.todo-item.completed p {
+  text-decoration: line-through;
+}
+.todo-item.completed {
+  opacity: 0.25;
+}
+.todo-list {
+  margin: 30px auto;
+  max-width: 500px;
+}
+
+.todo-item {
+  padding: 11px 15px;
+  background-color: #484848;
+  color: #fafafa;
+  display: flex;
+  border-radius: 4px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.todo-item:hover {
+  cursor: pointer;
+  background-color: #606060;
+}
+
+.todo-item p:hover {
+  cursor: text;
+}
+
+.todo-item+.todo-item {
+  margin-top: 10px;
+}
+
+.todo-item .remove-todo {
+  background-color: transparent;
+  all: unset;
+  font-size: 27px;
+  color: rgb(255, 95, 95);
+  cursor: pointer;
+  padding: 0 5px;
+  font-weight: 400;
 }
